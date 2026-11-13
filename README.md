@@ -1,14 +1,15 @@
-# Scorched Gains Tracker 🔥
+# Gains Tracker 🔥
 
 An interactive workout tracker built with React + Vite + Tailwind CSS. Track strength training progress with weight logging, set completion, session notes, and weekly history — all saved locally in your browser.
 
 ## Features
 
-- 📅 **4-day split tracking** — Monday, Tuesday, Wednesday, Friday
+- 📅 **Pick today's workout** — The app detects today's date and you choose which workout from your plan to do (Push + Legs, Pull, Endurance Class, Home Dumbbells). One session is logged per date.
+- 📱 **Responsive layout** — Adapts from phones to tablets and desktops
 - 🏋️ **Weight logging** — Record weight used per exercise per session
 - ✅ **Set completion tracking** — Check off exercises as you complete them, with a live progress bar
 - 📝 **Session notes** — Log how each session felt, PRs, or anything worth remembering
-- 📊 **History view** — Review past weeks, weights logged, and notes
+- 📊 **History view** — Review past sessions by date, grouped by week, with weights logged and notes
 - 💾 **Local persistence** — Data saved automatically via `localStorage`, no account needed
 
 ## Tech Stack
@@ -85,7 +86,8 @@ workout-tracker/
 ## Notes
 
 - All workout data is stored in your browser's `localStorage`. Clearing your browser data will reset the tracker.
-- The workout plan (exercises, sets, reps) is currently hardcoded in `App.jsx` under the `PLAN` object — edit this directly to customize days or exercises.
+- The workout plan (exercises, sets, reps) is hardcoded in `App.jsx` under the `PLAN` object, keyed by workout id (`push-legs`, `pull`, `endurance`, `home-db`) — edit this directly to add, remove, or customize workouts.
+- Sessions are stored under the `workout-tracker-v2` key. Data from the older weekday-based format (`workout-tracker`) is migrated automatically on first load; the old key is left in place as a backup.
 
 ## License
 
